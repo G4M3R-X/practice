@@ -40,7 +40,7 @@ try:
     input3.send_keys("Тестовое письмо")
     time.sleep(1)
     # Ввод текста письма
-    testletter = driver.find_element(By.CSS_SELECTOR, ".cke_editable_inline.cke_contents_true.cke_show_borders")
+    testletter = driver.find_element(By.CSS_SELECTOR, '.cke_editable_inline.cke_contents_true.cke_show_borders')
     testletter.clear()
     testletter.send_keys("Это тестовое письмо и бла-бла-бла")
     time.sleep(1)
@@ -53,8 +53,13 @@ try:
     buttons[0].click()
     buttons[2].click()
     buttons[4].click()
-    #driver.find_element(By.CSS_SELECTOR,'div.b-filename__text').click
-
+    time.sleep(2)
+    # нажать на кнопку "прикрепить"
+    button4 = driver.find_elements(By.CSS_SELECTOR, 'span[class="button2__txt"]')
+    button4[1].click()
+    # нажать на кнопку "отправить"
+    time.sleep(3)
+    button4[3].click()
     time.sleep(10)
 except Exception as ex:
     print(ex)
